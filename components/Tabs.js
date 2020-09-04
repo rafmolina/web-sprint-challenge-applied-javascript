@@ -20,8 +20,8 @@ axios.get('https://lambda-times-api.herokuapp.com/topics')
 
 function Tabs () {
 
-    const topics = document.createElement('div')
-    topics.classList.add('topics-tabs')
+    // const topics = document.createElement('div')
+    // topics.classList.add('topics-tabs')
 
     const java = document.createElement('div');
     java.classList.add('tab');
@@ -49,8 +49,11 @@ function Tabs () {
     topics.appendChild(jQuery);
     topics.appendChild(node);
 
+    // const divs = document.querySelector('.topics-tabs')
+    // const divsArr = Array.from(divs)
 
-    return topics
+
+    return java
 
 }
 

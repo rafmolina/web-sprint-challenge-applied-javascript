@@ -30,7 +30,7 @@ function cardMaker (object){
 
     const headline = document.createElement('div');
     headline.classList.add('headline')
-    headline.textContent = headline
+    card.textContent =  object.headline
 
     const author = document.createElement('div');
     author.classList.add('author')
@@ -38,30 +38,45 @@ function cardMaker (object){
     const img = document.createElement('div');
     img.classList.add('img-container')
 
-    const image = document.querySelector('img-container');
-    image.textContent = ('src', img)
+    const image = document.createElement('img');
+    image.src = object.authorPhoto
 
     const span = document.createElement('span')
-    span.textContent = span
+    span.textContent = object.authorName
+
+    // span.addEventListener('click', () => {
+    //     card.classList.toggle('selected')
 
     card.appendChild(headline);
     card.appendChild(author);
-    card.appendChild(img);
-    card.appendChild(span);
+    author.appendChild(img);
+    img.appendChild(image);
+    author.appendChild(span);
 
     return card
 }
 
-    const cards = document.querySelector('.cards-container');
-    //cards.appendChild(cardMaker())
+    //const cards = document.querySelector('.cards-container');
+    //cards.append(cardMaker())
 
     axios.get('https://lambda-times-api.herokuapp.com/articles')
 .then( response => {
+    console.log(response.data)
     console.log(response.data.message);
-    response.data.message.forEach( object => {
-        cards.append(cardMaker(object))
-    } )
+    const info = Object.values(response.data.articles);
+    const cards = document.querySelector('.cards-container');
+    info.forEach( item => {
+        item.forEach( element => {
+            cards.appendChild(cardMaker(element))
+        })
+    })
 })
 .catch( error => {
     console.log(error)
 })
+
+
+
+// info.forEach( item => {
+//     const card = cardMaker(item)
+//     cards.append(cardMaker(item))

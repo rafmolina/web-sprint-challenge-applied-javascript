@@ -28,13 +28,23 @@ Be prepared to demonstrate your understanding of this week's concepts by answeri
 
 1. What is the DOM?
 
+The DOM is an interface for HTML and XML documents. It represents the page so that programs can change the document structure, style, and content.
+
 2. What is an event?
+
+It's any change from any object on the GUI
 
 3. What is an event listener?
 
+It is a method that is called when the user does the called event. Like clicking a button or hovering over a page's object
+
 4. Why would we convert a NodeList into an Array?
 
+We want to turn them into an array so we may use methods on the created array's values.
+
 5. What is a component?
+
+A component is an object having a graphical representation that can be displayed on the screen and that can interact with the user
 
 You are expected to be able to answer questions in these areas. Your responses contribute to your Sprint Challenge grade.
 
